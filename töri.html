@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Történelem</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1>Válassz tantárgyat!</h1>
+    </div>
+    <div class="container">
+        <article><a href="magyar.html">Magyar</a></article>
+        <article><a href="matek.html">Matek</a></article>
+        <article><a href="#">Történelem</a></article>
+        <article><a href="német.html">Német</a></article>
+        <article><a href="biosz.html">Biológia</a></article>
+        <article><a href="kémia.html">Kémia</a></article>
+        <article><a href="index.html">Kezdőoldal</a></article>
+    </div>
+    <div class="container2">
+        <h2>Ennyi idő van a történelem érettségiig:</h2><br>
+        <h2 id="nap"></h2>
+    </div>
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("May 8, 2024 09:00:00").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get today's date and time
+          var now = new Date().getTime();
+        
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+        
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+          // Display the result in the element with id="demo"
+          document.getElementById("nap").innerHTML = days + " nap " + hours + " óra "
+          + minutes + " perc " + seconds + " másodperc ";
+        
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("nap").innerHTML = "ELKEZDŐDÖTT!!!";
+          }
+        }, 1000);
+    </script>
+    <div class="container">
+        <img src="töri.jpg" height="300" width="340">
+    </div>
+</body>
+</html>
